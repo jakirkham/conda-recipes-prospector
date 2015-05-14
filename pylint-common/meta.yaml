@@ -1,0 +1,66 @@
+package:
+  name: pylint-common
+  version: "0.2.1"
+
+source:
+  fn: pylint-common-0.2.1.tar.gz
+  url: https://pypi.python.org/packages/source/p/pylint-common/pylint-common-0.2.1.tar.gz
+  md5: 21380305b89feeaf319c01e4a8f456d9
+#  patches:
+   # List any patch files here
+   # - fix.patch
+
+# build:
+  # preserve_egg_dir: True
+  # entry_points:
+    # Put any entry points (scripts to be generated automatically) here. The
+    # syntax is module:function.  For example
+    #
+    # - pylint-common = pylint-common:main
+    #
+    # Would create an entry point called pylint-common that calls pylint-common.main()
+
+
+  # If this is a new build for the same version, increment the build
+  # number. If you do not include this key, it defaults to 0.
+  # number: 1
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - pylint >=1.0
+    - astroid >=1.0
+    - pylint-plugin-utils >=0.2.1
+
+  run:
+    - python
+    - pylint >=1.0
+    - astroid >=1.0
+    - pylint-plugin-utils >=0.2.1
+
+test:
+  # Python imports
+  imports:
+    - pylint_common
+
+  # commands:
+    # You can put test commands to be run here.  Use this to test that the
+    # entry points work.
+
+
+  # You can also put a file called run_test.py in the recipe that will be run
+  # at test time.
+
+  # requires:
+    # Put any additional test requirements here.  For example
+    # - nose
+
+about:
+  home: https://github.com/landscapeio/pylint-common
+  license: GPLv2
+  summary: 'pylint-common is a Pylint plugin to improve Pylint error analysis of thestandard Python library'
+
+# See
+# http://docs.continuum.io/conda/build.html for
+# more information about meta.yaml

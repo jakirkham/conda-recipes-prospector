@@ -1,0 +1,64 @@
+package:
+  name: pylint-plugin-utils
+  version: "0.2.3"
+
+source:
+  fn: pylint-plugin-utils-0.2.3.tar.gz
+  url: https://pypi.python.org/packages/source/p/pylint-plugin-utils/pylint-plugin-utils-0.2.3.tar.gz
+  md5: 6a4a1b351df33574c7e1650de6032bdb
+#  patches:
+   # List any patch files here
+   # - fix.patch
+
+# build:
+  # preserve_egg_dir: True
+  # entry_points:
+    # Put any entry points (scripts to be generated automatically) here. The
+    # syntax is module:function.  For example
+    #
+    # - pylint-plugin-utils = pylint-plugin-utils:main
+    #
+    # Would create an entry point called pylint-plugin-utils that calls pylint-plugin-utils.main()
+
+
+  # If this is a new build for the same version, increment the build
+  # number. If you do not include this key, it defaults to 0.
+  # number: 1
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - pylint
+    - astroid
+
+  run:
+    - python
+    - pylint
+    - astroid
+
+test:
+  # Python imports
+  imports:
+    - pylint_plugin_utils
+
+  # commands:
+    # You can put test commands to be run here.  Use this to test that the
+    # entry points work.
+
+
+  # You can also put a file called run_test.py in the recipe that will be run
+  # at test time.
+
+  # requires:
+    # Put any additional test requirements here.  For example
+    # - nose
+
+about:
+  home: https://github.com/landscapeio/pylint-plugin-utils
+  license: GPLv2
+  summary: 'Utilities and helpers for writing Pylint plugins'
+
+# See
+# http://docs.continuum.io/conda/build.html for
+# more information about meta.yaml
