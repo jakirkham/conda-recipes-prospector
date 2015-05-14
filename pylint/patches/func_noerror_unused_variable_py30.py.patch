@@ -1,0 +1,11 @@
+diff --git pylint/test/input/func_noerror_unused_variable_py30.py pylint/test/input/func_noerror_unused_variable_py30.py
+--- pylint/test/input/func_noerror_unused_variable_py30.py
++++ pylint/test/input/func_noerror_unused_variable_py30.py
+@@ -9,6 +9,5 @@
+     attr = True
+     def set_value(val):
+         """ Set the value in a nonlocal. """
+-        nonlocal attr
+-        attr = val
++        return val
+     return set_value

@@ -1,0 +1,8 @@
+diff --git pylint/test/input/syntax_error.py pylint/test/input/syntax_error.py
+index 6c1e7a7..4e06ddb 100644
+--- pylint/test/input/syntax_error.py
++++ pylint/test/input/syntax_error.py
+@@ -1,2 +1,2 @@
+ if False:
+-print('hop')
++    print('hop')

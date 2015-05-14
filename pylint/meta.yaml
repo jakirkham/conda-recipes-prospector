@@ -6,9 +6,34 @@ source:
   fn: pylint-1.4.3.tar.gz
   url: https://pypi.python.org/packages/source/p/pylint/pylint-1.4.3.tar.gz
   md5: 5924c1c7ca5ca23647812f5971d0ea44
-#  patches:
+  patches:
    # List any patch files here
-   # - fix.patch
+   - patches/abstract_class_instantiated_py3.py.patch
+   - patches/abstract_method_py3.py.patch
+   - patches/class_members_py30.py.patch
+   - patches/func_3k_removed_stuff_py_30.py.patch
+   - patches/func_bad_exception_context_py30.py.patch
+   - patches/func_continue_not_in_loop.py.patch
+   - patches/func_e0108.py.patch
+   - patches/func_exec_used_py30.py.patch
+   - patches/func_keyword_repeat.py.patch
+   - patches/func_kwoa_py30.py.patch
+   - patches/func_noerror_unused_variable_py30.py.patch
+   - patches/func_return_outside_func.py.patch
+   - patches/func_return_yield_mix_py_33.py.patch
+   - patches/func_syntax_error.py.patch
+   - patches/func_undefined_metaclass_var_py30.py.patch
+   - patches/func_unused_import_py30.py.patch
+   - patches/func_used_before_assignment_py30.py.patch
+   - patches/func_w0705.py.patch
+   - patches/raising_non_exception_py3.py.patch
+   - patches/syntax_error.py.patch
+   - patches/unbalanced_tuple_unpacking_py30.py.patch
+   - patches/undefined_variable_py30.py.patch
+   - patches/unknown_encoding_py29.py.patch
+   - patches/unknown_encoding_py30.py.patch
+   - patches/unknown_encoding_pypy.py.patch
+   - patches/yield_outside_func.py.patch
 
 build:
   # preserve_egg_dir: True

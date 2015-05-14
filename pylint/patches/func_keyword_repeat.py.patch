@@ -1,0 +1,13 @@
+diff --git pylint/test/input/func_keyword_repeat.py pylint/test/input/func_keyword_repeat.py
+index eeb733a..6dcabe5 100644
+--- pylint/test/input/func_keyword_repeat.py
++++ pylint/test/input/func_keyword_repeat.py
+@@ -6,6 +6,6 @@ def function_default_arg(one=1, two=2):
+     return two, one
+ 
+-function_default_arg(two=5, two=7)
+-function_default_arg(two=5, one=7, one='bob')
++function_default_arg(two=5)
++function_default_arg(two=5, one=7)
+ 
+ 

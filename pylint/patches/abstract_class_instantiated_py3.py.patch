@@ -1,0 +1,51 @@
+diff --git pylint/test/functional/abstract_class_instantiated_py3.py pylint/test/functional/abstract_class_instantiated_py3.py
+--- pylint/test/functional/abstract_class_instantiated_py3.py
++++ pylint/test/functional/abstract_class_instantiated_py3.py
+@@ -11,24 +11,32 @@
+ import abc
+ import weakref
+ 
+-class GoodClass(object, metaclass=abc.ABCMeta):
++from six import add_metaclass
++
++
++@add_metaclass(abc.ABCMeta)
++class GoodClass(object):
+     pass
+ 
+-class SecondGoodClass(object, metaclass=abc.ABCMeta):
++@add_metaclass(abc.ABCMeta)
++class SecondGoodClass(object):
+     def test(self):
+         """ do nothing. """
+ 
+-class ThirdGoodClass(object, metaclass=abc.ABCMeta):
++@add_metaclass(abc.ABCMeta)
++class ThirdGoodClass(object):
+     """ This should not raise the warning. """
+     def test(self):
+         raise NotImplementedError()
+ 
+-class BadClass(object, metaclass=abc.ABCMeta):
++@add_metaclass(abc.ABCMeta)
++class BadClass(object):
+     @abc.abstractmethod
+     def test(self):
+         """ do nothing. """
+ 
+-class SecondBadClass(object, metaclass=abc.ABCMeta):
++@add_metaclass(abc.ABCMeta)
++class SecondBadClass(object):
+     @property
+     @abc.abstractmethod
+     def test(self):
+@@ -38,7 +46,8 @@
+     pass
+ 
+ 
+-class Structure(object, metaclass=abc.ABCMeta):
++@add_metaclass(abc.ABCMeta)
++class Structure(object):
+     @abc.abstractmethod
+     def __iter__(self):
+         pass

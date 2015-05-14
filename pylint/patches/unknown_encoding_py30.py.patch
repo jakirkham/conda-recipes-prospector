@@ -1,0 +1,10 @@
+diff --git pylint/test/functional/unknown_encoding_py30.py pylint/test/functional/unknown_encoding_py30.py
+index 2ee5f69..6961010 100644
+--- pylint/test/functional/unknown_encoding_py30.py
++++ pylint/test/functional/unknown_encoding_py30.py
+@@ -1,5 +1,4 @@
+ # +1: [syntax-error]
+-# -*- coding: IBO-8859-1 -*-
+ """ check correct unknown encoding declaration
+ """
+ 

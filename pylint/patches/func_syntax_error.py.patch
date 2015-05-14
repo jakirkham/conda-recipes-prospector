@@ -1,0 +1,7 @@
+diff --git pylint/test/input/func_syntax_error.py pylint/test/input/func_syntax_error.py
+index 43fa087..ffe3be1 100644
+--- pylint/test/input/func_syntax_error.py
++++ pylint/test/input/func_syntax_error.py
+@@ -1 +1 @@
+-def toto
++#def toto

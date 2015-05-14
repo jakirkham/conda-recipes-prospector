@@ -1,0 +1,37 @@
+diff --git pylint/test/input/func_used_before_assignment_py30.py pylint/test/input/func_used_before_assignment_py30.py
+index ae979a1..37d1677 100644
+--- pylint/test/input/func_used_before_assignment_py30.py
++++ pylint/test/input/func_used_before_assignment_py30.py
+@@ -7,7 +7,6 @@ def test_ok():
+     """ uses nonlocal """
+     cnt = 1
+     def wrap():
+-        nonlocal cnt
+         cnt = cnt + 1
+     wrap()
+ 
+@@ -23,21 +22,20 @@ def test_fail2():
+     cnt = 1
+     count = 1
+     def wrap():
+-        nonlocal count
+         cnt = cnt + 1
+     wrap()
+ 
+-def test_fail3(arg: test_fail4):
++def test_fail3(test_fail4):
+     """ Depends on `test_fail4`, in argument annotation. """
+     return arg
+ 
+-def test_fail4(*args: test_fail5, **kwargs: undefined):
++def test_fail4(*test_fail5, **undefined):
+     """ Depends on `test_fail5` and `undefined` in
+     variable and named arguments annotations.
+     """
+     return args, kwargs
+ 
+-def test_fail5()->undefined1:
++def test_fail5():
+     """ Depends on `undefined1` in function return annotation. """
+ 
+ def undefined():

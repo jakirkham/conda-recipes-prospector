@@ -1,0 +1,40 @@
+diff --git pylint/test/input/func_bad_exception_context_py30.py pylint/test/input/func_bad_exception_context_py30.py
+index 98b44ee..49e95a9 100644
+--- pylint/test/input/func_bad_exception_context_py30.py
++++ pylint/test/input/func_bad_exception_context_py30.py
+@@ -4,6 +4,9 @@
+ 
+ import socket, unknown
+ 
++from six import raise_from
++
++
+ __revision__ = 0
+ 
+ class ExceptionSubclass(Exception):
+@@ -11,14 +14,14 @@ class ExceptionSubclass(Exception):
+ 
+ def test():
+     """ docstring """
+-    raise IndexError from 1
+-    raise IndexError from None
+-    raise IndexError from ZeroDivisionError
+-    raise IndexError from object()
+-    raise IndexError from ExceptionSubclass
+-    raise IndexError from socket.error
+-    raise IndexError() from None
+-    raise IndexError() from ZeroDivisionError
+-    raise IndexError() from ZeroDivisionError()
+-    raise IndexError() from object()
+-    raise IndexError() from unknown
++    raise_from(IndexError, 1)
++    raise_from(IndexError, None)
++    raise_from(IndexError, ZeroDivisionError)
++    raise_from(IndexError, object())
++    raise_from(IndexError, ExceptionSubclass)
++    raise_from(IndexError, socket.error)
++    raise_from(IndexError(), None)
++    raise_from(IndexError(), ZeroDivisionError)
++    raise_from(IndexError(), ZeroDivisionError())
++    raise_from(IndexError(), object())
++    raise_from(IndexError(), unknown)

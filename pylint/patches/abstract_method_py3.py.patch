@@ -1,0 +1,23 @@
+diff --git pylint/test/functional/abstract_method_py3.py pylint/test/functional/abstract_method_py3.py
+--- pylint/test/functional/abstract_method_py3.py
++++ pylint/test/functional/abstract_method_py3.py
+@@ -5,6 +5,9 @@
+ # pylint: disable=too-few-public-methods
+ import abc
+ 
++from six import with_metaclass
++
++
+ class Abstract(object):
+     def aaaa(self):
+         """should be overridden in concrete class"""
+@@ -32,7 +35,8 @@
+         """overidden form Abstract"""
+ 
+ 
+-class Structure(object, metaclass=abc.ABCMeta):
++@with_metaclass(abc.ABCMeta)
++class Structure(object):
+     @abc.abstractmethod
+     def __iter__(self):
+         pass

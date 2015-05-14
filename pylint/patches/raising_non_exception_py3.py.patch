@@ -1,0 +1,14 @@
+diff --git pylint/test/functional/raising_non_exception_py3.py pylint/test/functional/raising_non_exception_py3.py
+--- pylint/test/functional/raising_non_exception_py3.py
++++ pylint/test/functional/raising_non_exception_py3.py
+@@ -6,8 +6,9 @@
+ # pylint: disable=import-error, too-few-public-methods
+ 
+ from missing_module import missing
++from six import raise_from
+ 
+ class Exc(object):
+     """Not an actual exception."""
+ 
+-raise Exc from missing # [raising-non-exception]
++raise_from(Exc, missing) # [raising-non-exception]

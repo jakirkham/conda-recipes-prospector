@@ -1,0 +1,9 @@
+diff --git pylint/test/functional/unknown_encoding_py29.py pylint/test/functional/unknown_encoding_py29.py
+--- pylint/test/functional/unknown_encoding_py29.py
++++ pylint/test/functional/unknown_encoding_py29.py
+@@ -1,5 +1,4 @@
+ # [syntax-error]
+-# -*- coding: IBO-8859-1 -*-
+ """ check correct unknown encoding declaration
+ """
+ 

@@ -1,0 +1,15 @@
+diff --git pylint/test/input/func_continue_not_in_loop.py pylint/test/input/func_continue_not_in_loop.py
+--- pylint/test/input/func_continue_not_in_loop.py
++++ pylint/test/input/func_continue_not_in_loop.py
+@@ -5,9 +5,9 @@
+ def run():
+     """simple function"""
+     if True:
+-        continue
++        pass #continue
+     else:
+-        break
++        pass #break
+ 
+ if __name__ == '__main__':
+     run()

@@ -1,0 +1,21 @@
+diff --git pylint/test/input/func_return_yield_mix_py_33.py pylint/test/input/func_return_yield_mix_py_33.py
+--- pylint/test/input/func_return_yield_mix_py_33.py
++++ pylint/test/input/func_return_yield_mix_py_33.py
+@@ -2,15 +2,9 @@
+ __revision__ = None
+ def somegen():
+     """this is a bad generator"""
+-    if True:
+-        return 1
+-    else:
+-        yield 2
++    yield 2
+ 
+ def moregen():
+     """this is another bad generator"""
+-    if True:
+-        yield 1
+-    else:
+-        return 2
++    yield 1
+ 

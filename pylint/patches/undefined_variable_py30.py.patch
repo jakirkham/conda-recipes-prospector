@@ -1,0 +1,56 @@
+diff --git pylint/test/functional/undefined_variable_py30.py pylint/test/functional/undefined_variable_py30.py
+--- pylint/test/functional/undefined_variable_py30.py
++++ pylint/test/functional/undefined_variable_py30.py
+@@ -5,17 +5,17 @@
+ class Undefined:
+     """ test various annotation problems. """
+ 
+-    def test(self)->Undefined: # [undefined-variable]
++    def test(self): #->Undefined: # [undefined-variable]
+         """ used Undefined, which is Undefined in this scope. """
+ 
+     Undefined = True
+ 
+-    def test1(self)->Undefined:
++    def test1(self): #->Undefined:
+         """ This Undefined exists at local scope. """
+ 
+     def test2(self):
+         """ This should not emit. """
+-        def func()->Undefined:
++        def func(): #->Undefined:
+             """ empty """
+             return
+         return func
+@@ -30,10 +30,10 @@
+     class InnerScope:
+         """ Test inner scope definition. """
+ 
+-        def test_undefined(self)->Undef: # [undefined-variable]
++        def test_undefined(self): #->Undef: # [undefined-variable]
+             """ Looking at a higher scope is impossible. """
+ 
+-        def test1(self)->ABC: # [undefined-variable]
++        def test1(self): #->ABC: # [undefined-variable]
+             """ Triggers undefined-variable. """
+ 
+ 
+@@ -45,14 +45,14 @@
+ 
+     top = 42
+ 
+-    def test_good(self, abc: top):
++    def test_good(self, abc): #: top):
+         """ top is defined at this moment. """
+ 
+-    def test_bad(self, abc: trop): # [undefined-variable]
++    def test_bad(self, abc): #: trop): # [undefined-variable]
+         """ trop is undefined at this moment. """
+ 
+-    def test_bad1(self, *args: trop1): # [undefined-variable]
++    def test_bad1(self, *args): #: trop1): # [undefined-variable]
+         """ trop1 is undefined at this moment. """
+ 
+-    def test_bad2(self, **abc: trop2): # [undefined-variable]
++    def test_bad2(self, **abc): #: trop2): # [undefined-variable]
+         """ trop2 is undefined at this moment. """

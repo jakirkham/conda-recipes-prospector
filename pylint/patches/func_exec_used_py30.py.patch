@@ -1,0 +1,24 @@
+diff --git pylint/test/input/func_exec_used_py30.py pylint/test/input/func_exec_used_py30.py
+--- pylint/test/input/func_exec_used_py30.py
++++ pylint/test/input/func_exec_used_py30.py
+@@ -1,13 +1,16 @@
+ """test global statement"""
+ 
++from six import exec_
++
++
+ __revision__ = 0
+ 
+-exec('a = __revision__')
+-exec('a = 1', globals={})
++exec_('a = __revision__')
++exec_('a = 1', globals={})
+ 
+-exec('a = 1', globals=globals())
++exec_('a = 1', globals=globals())
+ 
+ def func():
+     """exec in local scope"""
+-    exec('b = 1')
++    exec_('b = 1')
+ 

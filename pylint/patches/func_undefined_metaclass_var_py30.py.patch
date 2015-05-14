@@ -1,0 +1,36 @@
+diff --git pylint/test/input/func_undefined_metaclass_var_py30.py pylint/test/input/func_undefined_metaclass_var_py30.py
+--- pylint/test/input/func_undefined_metaclass_var_py30.py
++++ pylint/test/input/func_undefined_metaclass_var_py30.py
+@@ -4,20 +4,27 @@
+ 
+ import abc
+ from abc import ABCMeta
++from six import with_metaclass
+ 
+-class Bad(metaclass=ABCMet):
++
++@with_metaclass(ABCMet)
++class Bad():
+     """ Notice the typo """
+ 
+-class SecondBad(metaclass=ab.ABCMeta):
++@with_metaclass(ab.ABCMeta)
++class SecondBad():
+     """ Notice the `ab` module. """
+ 
+-class Good(metaclass=int):
++@with_metaclass(int)
++class Good():
+     """ int is not a proper metaclass, but it is defined. """
+ 
+-class SecondGood(metaclass=Good):
++@with_metaclass(Good)
++class SecondGood():
+     """ empty """
+ 
+-class ThirdGood(metaclass=ABCMeta):
++@with_metaclass(ABCMeta)
++class ThirdGood():
+     """ empty """
+ 
+ class FourthGood(ThirdGood):

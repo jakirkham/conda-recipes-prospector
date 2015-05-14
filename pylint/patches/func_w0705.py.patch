@@ -1,0 +1,12 @@
+diff --git pylint/test/input/func_w0705.py pylint/test/input/func_w0705.py
+--- pylint/test/input/func_w0705.py
++++ pylint/test/input/func_w0705.py
+@@ -26,8 +26,6 @@
+ 
+ try:
+     __revision__ += 1
+-except:
+-    pass
+ except Exception:
+     pass
+ 

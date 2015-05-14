@@ -1,0 +1,34 @@
+diff --git pylint/test/functional/class_members_py30.py pylint/test/functional/class_members_py30.py
+index c9b2612..6e6d122 100644
+--- pylint/test/functional/class_members_py30.py
++++ pylint/test/functional/class_members_py30.py
+@@ -1,6 +1,9 @@
+ """ Various tests for class members access. """
+ # pylint: disable=R0903
+ 
++from six import with_metaclass
++
++
+ class MyClass(object):
+     """class docstring"""
+ 
+@@ -31,7 +34,8 @@ class NewClass(object):
+ 
+ from abc import ABCMeta
+ 
+-class TestMetaclass(object, metaclass=ABCMeta):
++@with_metaclass(ABCMeta)
++class TestMetaclass(object):
+     """ Test attribute access for metaclasses. """
+ 
+ class Metaclass(type):
+@@ -40,7 +44,8 @@ class Metaclass(type):
+     def test(mcs):
+         """ classmethod """
+ 
+-class UsingMetaclass(object, metaclass=Metaclass):
++@with_metaclass(Metaclass)
++class UsingMetaclass(object):
+     """ empty """
+ 
+ TestMetaclass.register(int)

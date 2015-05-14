@@ -1,0 +1,13 @@
+diff --git pylint/test/functional/unbalanced_tuple_unpacking_py30.py pylint/test/functional/unbalanced_tuple_unpacking_py30.py
+--- pylint/test/functional/unbalanced_tuple_unpacking_py30.py
++++ pylint/test/functional/unbalanced_tuple_unpacking_py30.py
+@@ -6,6 +6,7 @@
+ 
+ def test():
+     """ Test that starred expressions don't give false positives. """
+-    first, second, *last = (1, 2, 3, 4)
+-    *last, = (1, 2)
++    seq = (1, 2, 3, 4)
++    (first, second), last = seq[:2], seq[2:]
++    last = (1, 2)
+     return (first, second, last)
