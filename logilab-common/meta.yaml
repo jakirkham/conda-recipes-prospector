@@ -39,11 +39,6 @@ test:
   # Python imports
   imports:
     - logilab.common
-    - logilab.common.test
-    - logilab.common.test.data
-    - logilab.common.test.data.find_test
-    - logilab.common.test.data.lmfp
-    - logilab.common.ureports
 
   # commands:
     # You can put test commands to be run here.  Use this to test that the
