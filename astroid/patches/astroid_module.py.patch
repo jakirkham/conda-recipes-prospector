@@ -1,0 +1,9 @@
+diff -r 2758935c62ca astroid/tests/testdata/python3/data/module.py
+--- astroid/tests/testdata/python3/data/module.py	Wed May 13 12:37:32 2015 +0300
++++ astroid/tests/testdata/python3/data/module.py	Thu May 14 12:35:44 2015 -0400
+@@ -1,3 +1,5 @@
++from __future__ import print_function
++
+ """test module for astroid
+ """
+ 
