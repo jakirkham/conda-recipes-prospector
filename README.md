@@ -5,3 +5,7 @@ This is a collection of scripts to build [`prospector`]( https://github.com/land
 #Usage
 
 This is very straightforward to use. Simply run `conda build prospector`.
+
+#Patch notes
+
+It became apparent that `pylint` had problems building due to its inclusion of syntactically bad or Python 3 only source code as part of its test data. As the Python interpreter tried to compile this problematic code, it would cause the install to fail. Even if we were able to bypass, these errors with `pylint` other packages that relied on `pylint` would import `pylint` and the interpreter would include and parse this test data. So, a number of patches were written to work around this problem. Similar, patches were required for `astroid`. These patches were written using `six` where possible to preserve the intent as best as could be done. In some cases, this wasn't possible and so code was commented or deleted. As a consequence, these patches likely have the consequence of causing test failures. So, this is something to be aware of.
