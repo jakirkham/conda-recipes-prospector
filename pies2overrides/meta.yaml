@@ -40,7 +40,7 @@ test:
   imports:
     - html
     - http
-    - pies2overrides
+    #- pies2overrides
     - xmlrpc
 
   # commands:
