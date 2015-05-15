@@ -82,7 +82,7 @@ test:
     # entry points work.
 
     - pylint --help
-    - pylint-gui --help
+    #- pylint-gui --help
     - epylint --help
     - pyreverse --help
     - symilar --help
