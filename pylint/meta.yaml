@@ -83,7 +83,7 @@ test:
 
     - pylint --help
     #- pylint-gui --help
-    - epylint --help
+    #- epylint --help
     - pyreverse --help
     - symilar --help
 
